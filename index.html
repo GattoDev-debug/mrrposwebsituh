@@ -2,80 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MrrpOS Static Server</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MrrpOS Static Repo</title>
+  <link rel="icon" type="image/png" href="https://GattoDev-debug.github.io/mrrposwebsituh/assets/mrrpos-shadow.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(135deg, #232526 0%, #434343 100%);
-      color: #fff;
-      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #4e54c8 0%, #8f94fb 100%);
+      font-family: 'Montserrat', Arial, sans-serif;
       margin: 0;
-      padding: 0;
       min-height: 100vh;
+      color: #2d2d2d;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
     }
     .container {
-      background: rgba(30,32,34,0.92);
+      background: rgba(255,255,255,0.9);
       border-radius: 18px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.3);
-      padding: 40px 36px;
+      box-shadow: 0 8px 32px rgba(30,30,60,0.12);
+      padding: 2.5rem 2rem 2rem 2rem;
+      margin-top: 60px;
       max-width: 420px;
+      width: 90vw;
       text-align: center;
-      margin: 32px;
+    }
+    .logo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 4px 16px rgba(50,50,100,0.12);
+      margin-bottom: 1.5rem;
+      object-fit: contain;
+      border: 3px solid #4e54c8;
     }
     h1 {
+      margin: 0 0 12px 0;
       font-size: 2.2rem;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
+      font-weight: 700;
+      color: #4e54c8;
+      letter-spacing: 2px;
     }
-    .private {
-      color: #ffd257;
-      font-weight: bold;
-      margin-bottom: 16px;
+    p {
       font-size: 1.1rem;
+      margin-bottom: 1.7rem;
+      color: #444;
     }
-    .desc {
-      margin-bottom: 24px;
-      color: #d1d1d1;
-      font-size: 1rem;
-    }
-    .link-btn {
-      display: inline-block;
-      background: #1e88e5;
+    .btn {
+      background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
       color: #fff;
-      text-decoration: none;
-      padding: 12px 30px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      transition: background 0.2s;
-      margin-bottom: 16px;
+      border: none;
+      border-radius: 25px;
+      padding: 0.8rem 2.3rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 4px 15px rgba(78,84,200,0.13);
     }
-    .link-btn:hover {
-      background: #1565c0;
+    .btn:hover {
+      box-shadow: 0 8px 24px rgba(78,84,200,0.25);
+      transform: translateY(-2px) scale(1.04);
     }
-    .footer {
-      font-size: 0.95rem;
-      color: #7d7d7d;
-      margin-top: 18px;
+    @media (max-width: 500px) {
+      .container {
+        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+        margin-top: 35px;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      .logo {
+        width: 70px;
+        height: 70px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>MrrpOS Static Server</h1>
-    <div class="private">📦 Assets, Sources, & Static Files Server for MrrpOS</div>
-    <div class="desc">
-      This server hosts assets and static files for <strong>MrrpOS</strong>, its site, and other related content.<br>
-      Hosted by GattoDev &amp; ANW.<br>
-    </div>
-    <a class="link-btn" href="https://anw.is-a.dev/mrrpos" target="_blank" rel="noopener">Visit OS Site</a>
-    <div class="footer">
-      "&copy;" 2025 GattoDev &amp; ANW &mdash; <span style="color:#999">MrrpOS.</span>
-    </div>
+    <img class="logo" src="https://GattoDev-debug.github.io/mrrposwebsituh/assets/mrrpos-shadow.png" alt="MRR POS Logo">
+    <h1>MrrpOS Static Repo</h1>
+    <p>This repository is for storing assets and files for MrrpOS.</p>
+    <p>Hosted by GattoDev.</p>
+    <a href="https://github.com/GattoDev-debug/" class="btn">Visit on Github</a><br>
+    <a href="https://anw.is-a.dev/mrrpos" class="btn">Visit OS Site</a>
   </div>
 </body>
 </html>
