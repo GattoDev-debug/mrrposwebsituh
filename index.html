@@ -4,91 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MrrpOS Static Repo</title>
-  <link rel="icon" type="image/png" href="https://GattoDev-debug.github.io/mrrposwebsituh/assets/mrrpos-shadow.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: linear-gradient(120deg, #4e54c8 0%, #8f94fb 100%);
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin: 0;
-      min-height: 100vh;
-      color: #2d2d2d;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .container {
-      background: rgba(255,255,255,0.9);
-      border-radius: 18px;
-      box-shadow: 0 8px 32px rgba(30,30,60,0.12);
-      padding: 2.5rem 2rem 2rem 2rem;
-      margin-top: 60px;
-      max-width: 420px;
-      width: 90vw;
-      text-align: center;
-    }
-    .logo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: 0 4px 16px rgba(50,50,100,0.12);
-      margin-bottom: 1.5rem;
-      object-fit: contain;
-      border: 3px solid #4e54c8;
-    }
-    h1 {
-      margin: 0 0 12px 0;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #4e54c8;
-      letter-spacing: 2px;
-    }
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1.7rem;
-      color: #444;
-    }
-    .btn {
-      background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
-      color: #fff;
-      border: none;
-      border-radius: 25px;
-      padding: 0.8rem 2.3rem;
-      font-size: 1.1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: box-shadow 0.2s, transform 0.2s;
-      box-shadow: 0 4px 15px rgba(78,84,200,0.13);
-    }
-    .btn:hover {
-      box-shadow: 0 8px 24px rgba(78,84,200,0.25);
-      transform: translateY(-2px) scale(1.04);
-    }
-    @media (max-width: 500px) {
-      .container {
-        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
-        margin-top: 35px;
-      }
-      h1 {
-        font-size: 1.4rem;
-      }
-      .logo {
-        width: 70px;
-        height: 70px;
-      }
-    }
-  </style>
+  <link rel="icon" type="image/png" href="https://mrrpos.pages.dev/assets/mrrpos-shadow.png">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <div class="container">
-    <img class="logo" src="https://GattoDev-debug.github.io/mrrposwebsituh/assets/mrrpos-shadow.png" alt="MRR POS Logo">
-    <h1>MrrpOS Static Repo</h1>
-    <p>This repository is for storing assets and files for MrrpOS.</p>
-    <p>Hosted by GattoDev.</p><br>
-    <a href="https://github.com/GattoDev-debug/" class="btn">Visit on Github</a><br><br><br>
-    <a href="https://anw.is-a.dev/mrrpos" class="btn">Visit OS Site</a><br><br>
-    <a href="https://anw.is-a.dev/mrrpos">MrrpOS</a> © 2025 by <a href="https://anw.is-a.dev">Subhrajit Sain</a> is licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-900 to-gray-800 flex flex-col items-center justify-center py-8">
+  <div class="bg-gray-900 bg-opacity-80 rounded-2xl shadow-2xl px-8 py-10 max-w-md w-full text-center border border-gray-700">
+    <img class="w-28 h-28 rounded-full mx-auto mb-6 border-4 border-indigo-600 shadow-lg object-contain bg-white" src="https://mrrpos.pages.dev/assets/mrrpos-shadow.png" alt="MRR POS Logo">
+    <h1 class="text-3xl font-extrabold text-indigo-400 mb-2 tracking-wide">MrrpOS Static Repo</h1>
+    <p class="text-gray-300 mb-3">This repository is for storing assets and files for MrrpOS.</p>
+    <p class="text-gray-400 mb-8">Hosted by GattoDev.</p>
+    <div class="flex flex-col gap-4 mb-7">
+      <a href="https://github.com/GattoDev-debug/" class="bg-indigo-600 hover:bg-indigo-500 transition text-white font-semibold py-2 rounded-xl shadow-lg">Visit on Github</a>
+      <a href="https://anw.is-a.dev/mrrpos" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 transition text-white font-semibold py-2 rounded-xl shadow-lg">Visit OS Site</a>
+    </div>
+    <div class="text-xs text-gray-500 mt-6 space-y-1">
+      <span>
+        <a href="https://anw.is-a.dev/mrrpos" class="underline hover:text-indigo-300">MrrpOS</a> © 2025 by 
+        <a href="https://anw.is-a.dev" class="underline hover:text-indigo-300">Subhrajit Sain</a>
+      </span>
+      <br>
+      is licensed under 
+      <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="underline hover:text-indigo-300">CC BY-ND 4.0</a>
+    </div>
   </div>
 </body>
 </html>
