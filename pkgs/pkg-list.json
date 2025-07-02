@@ -25,7 +25,7 @@
   },
   "mpreg": {
     "download": "https://mrrpos.pages.dev/pkgs/mpreg",
-    "description": "A package/patch downloader (NOT INSTALLER) for MrrpOS.",
+    "description": "A package downloader (NOT INSTALLER) for MrrpOS.",
     "lang": "python",
     "dependencies": {
       "python-modules": {
