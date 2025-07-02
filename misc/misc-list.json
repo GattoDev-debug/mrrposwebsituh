@@ -1,0 +1,22 @@
+{
+  "wallpapers": {
+    "MrrpOS Wallpaper 1": {
+      "download": "https://mrrpos.pages.dev/misc/wallpaper-1.png",
+      "author": "ANW"
+    },
+    "MrrpOS Wallpaper 2": {
+      "download": "https://mrrpos.pages.dev/misc/wallpaper-2.png",
+      "author": "ANW"
+    },
+    "MrrpOS Wallpaper 3": {
+      "download": "https://mrrpos.pages.dev/misc/wallpaper-3.png",
+      "author": "ANW"
+    }
+  },
+  "others": {
+    "Whole /etc/mrrpos Folder": {
+      "download": "soon",
+      "author": "ANW"
+    }
+  }
+}
