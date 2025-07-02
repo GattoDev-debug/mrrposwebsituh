@@ -30,7 +30,7 @@
     "dependencies": {
       "python-modules": "requests",
       "misc": "wget"
-    }
+    },
     "type": "executable",
     "author": "ANW"
   }
