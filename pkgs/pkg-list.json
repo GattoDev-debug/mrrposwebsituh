@@ -28,12 +28,8 @@
     "description": "A package downloader (NOT INSTALLER) for MrrpOS.",
     "lang": "python",
     "dependencies": {
-      "python-modules": {
-        "requests"
-      },
-      "misc": {
-        "wget"
-      }
+      "python-modules": "requests",
+      "misc": "wget"
     }
     "type": "executable",
     "author": "ANW"
