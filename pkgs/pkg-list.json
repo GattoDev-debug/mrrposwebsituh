@@ -3,6 +3,7 @@
     "download": "https://mrrpos.pages.dev/pkgs/gary",
     "description": "Prints a random gary string.",
     "lang": "python",
+    "dependencies": "none",
     "type": "executable",
     "author": "ANW"
   },
@@ -10,6 +11,7 @@
     "download": "https://mrrpos.pages.dev/pkgs/garysay",
     "description": "A replica of the cowsay program but with Gary the cat.",
     "lang": "python",
+    "dependencies": "none",
     "type": "executable",
     "author": "ANW"
   },
@@ -17,13 +19,22 @@
     "download": "https://mrrpos.pages.dev/pkgs/garyrem",
     "description": "A global program for remembering stuff and messages.",
     "lang": "python",
+    "dependencies": "none",
     "type": "executable",
     "author": "ANW"
   },
   "mpreg": {
     "download": "https://mrrpos.pages.dev/pkgs/mpreg",
-    "description": "A package downloader (NOT INSTALLER) for MrrpOS.",
+    "description": "A package/patch downloader (NOT INSTALLER) for MrrpOS.",
     "lang": "python",
+    "dependencies": {
+      "python-modules": {
+        "requests"
+      },
+      "misc": {
+        "wget"
+      }
+    }
     "type": "executable",
     "author": "ANW"
   }
