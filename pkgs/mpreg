@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# `mpreg` program by ANW for MrrpOS
+# `mpreg` program by ANW for MrrpOS v1
 # The MrrpOS package/misc downloader
 
 import requests
