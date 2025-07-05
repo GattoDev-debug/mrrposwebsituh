@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# `mpreg` program by ANW for MrrpOS v2
+# `mpreg` program by ANW for MrrpOS v3
 # The MrrpOS package/misc downloader
 
 import requests
@@ -7,13 +7,18 @@ import os
 import sys
 
 print("/------------------------------------------------------\\")
-print("| mpreg v2 - The MrrpOS package/misc. files downloader |")
+print("| mpreg v3 - The MrrpOS package/misc. files downloader |")
 print("| By ANW, for MrrpOS. (https://anw.is-a.dev)           |")
 print("\\------------------------------------------------------/\n")
 
 # Define constants
 PACKAGE_LIST_URL = "https://mrrpos.pages.dev/pkgs/pkg-list.json"
 MISC_LIST_URL = "https://mrrpos.pages.dev/misc/misc-list.json"
+
+if not (os.path.isdir("/etc/mpreg/pkgs") and os.path.isdir("/etc/mpreg/misc")):
+    os.system("mkdir -p /etc/mpreg")
+    os.system("mkdir -p /etc/mpreg/pkgs")
+    os.system("mkdir -p /etc/mpreg/misc")
 
 def fetch_json_data(url):
     try:
@@ -87,6 +92,9 @@ def main():
         print("  list-misc                            - List available miscellaneous files    ")
         print("  download-pkg <package_name>          - Download a specific package           ")
         print("  download-misc <category> <item_name> - Download a specific miscellaneous file")
+        print("Saves downloaded files to:                                                     ")
+        print("  /etc/mpreg/pkgs                      - For packages                          ")
+        print("  /etc/mpreg/misc                      - For miscellaneous files               ")
         sys.exit(1)
 
     command = sys.argv[1]
@@ -107,7 +115,7 @@ def main():
             download_url = pkg_data[package_name].get("download")
             if download_url and download_url != "soon":
                 print(f"Attempting to download package: {package_name}")
-                download_file(download_url, destination_folder="downloads/pkgs", filename=package_name)
+                download_file(download_url, destination_folder="/etc/mpreg/pkgs", filename=package_name)
             else:
                 if not download_url:
                     print(f"Download URL for package '{package_name}' is not present or blank in the package list.", file=sys.stderr)
