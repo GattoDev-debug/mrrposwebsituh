@@ -134,7 +134,7 @@ def main():
             else:
                 if not download_url:
                     print(f"Download URL for miscellaneous item '{item_name}' in category '{category}' is not present or is blank in the miscellaneous files list.", file=sys.stderr)
-                elif if download_url == "soon":
+                elif download_url == "soon":
                     print(f"Download URL for miscellaneous item '{item_name}' in category '{category}' is coming soon.")
         else:
             if not misc_data:
