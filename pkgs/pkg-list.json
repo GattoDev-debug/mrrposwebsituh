@@ -19,7 +19,7 @@
   },
   "garyrem": {
     "download": "soon",
-    "version": "2",
+    "version": "3",
     "description": "A global program for remembering stuff and messages.",
     "lang": "python",
     "dependencies": "none",
