@@ -1,0 +1,145 @@
+#!/usr/bin/python3
+# `garyrem` program by ANW for MrrpOS
+
+# imports
+import sys
+import os
+
+# init
+VERSION_STR  = "garyrem v3 by ANW, for MrrpOS."
+show_usage   = False
+show_about   = False
+show_version = False
+read_mode    = False
+read_all     = False
+slot         = -1
+text         = "garyrem: Failed to save this file."
+
+# prepare files
+try:
+    os.system("mkdir -p /etc/garyrem   ")
+    os.system("touch /etc/garyrem/0.txt")
+    os.system("touch /etc/garyrem/1.txt")
+    os.system("touch /etc/garyrem/2.txt")
+    os.system("touch /etc/garyrem/3.txt")
+    os.system("touch /etc/garyrem/4.txt")
+    os.system("touch /etc/garyrem/5.txt")
+    os.system("touch /etc/garyrem/6.txt")
+    os.system("touch /etc/garyrem/7.txt")
+    os.system("touch /etc/garyrem/8.txt")
+    os.system("touch /etc/garyrem/9.txt")
+except Exception as e:
+    print(f"garyrem: Error while setting up Gary's memory: {e}")
+    exit(1)
+
+# try to read args
+try:
+    text = str(sys.argv[1]) # first arg
+    
+    if text == "--read" or text == "-r":
+        read_mode    = True
+        slot = int(sys.argv[2]) # get slot no. from second arg
+    elif text == "--list" or text == "-l":
+        read_all     = True
+    elif text == "--help" or text == "-h":
+        show_usage   = True
+    elif text == "--about" or text == "-a":
+        show_about   = True
+    elif text == "--version" or text == "-v":
+        show_version = True
+    else:
+        slot = int(sys.argv[2]) # second arg
+except:
+    show_usage = True # for wrong number of args
+
+# if the slot var is set from args and it is either the read or write operation
+if (not slot == -1) and (not (text == "--all" or text == "--help" or text == "--about" or text == "--version")) :
+    if slot < 0 or slot > 9:
+        print("garyrem: Invalid slot number. Slot numbers are from 0 to 9.")
+        exit(2)
+else:
+    slot = -1 # keep slot var as -1
+
+# usage message
+if show_usage:
+    print(VERSION_STR)
+    print("-----------------------------------------------")
+    print("Usage: garyrem <arg1> <arg2>                   ")
+    print("  where <arg1> can be:                         ")
+    print("    \"text\"        - text to remember / save. ")
+    print("                    use \"\" to erase a slot.  ")
+    print("    -l --list     - list out every slot.       ")
+    print("    -r --read     - read the text from a slot. ")
+    print("    -h --help     - shows the help page.       ")
+    print("    -a --about    - shows the about page.      ")
+    print("    -v --version  - prints the version.        ")
+    print("  where <arg2> can be:                         ")
+    print("    slot (int) - the slot number.              ")
+    print("                 this corresponds to:          ")
+    print("                   /etc/garyrem/<slot>.txt     ")
+    print("                 required for IO.              ")
+    print("                                               ")
+    print("Exit codes:                                    ")
+    print("  0 - all is okay.                             ")
+    print("  1 - setup issue.                             ")
+    print("  2 - user caused error.                       ")
+    print("  3 - read error.                              ")
+    print("  4 - write error.                             ")
+    print("-----------------------------------------------")
+    exit(0)
+# about page
+elif show_about:
+    print(VERSION_STR)
+    print("--------------------------------------------")
+    print("A global, persistent text-keeping program.  ")
+    print("garyrem can be used to remember things too. ")
+    print("                                   - by ANW ")
+    print("                                            ")
+    print("garyrem uses this directory for files:      ")
+    print("  /etc/garyrem                              ")
+    print("--------------------------------------------")
+    exit(0)
+# print version
+elif show_version:
+    print(VERSION_STR)
+    exit(0)
+
+# reads a slot
+if read_mode:
+    try:
+        with open(f"/etc/garyrem/{slot}.txt", "r") as file:
+            line = file.readline() or f"garyrem: Slot {slot} is empty."
+        file.close()
+        print(line)
+    except Exception as e:
+        print(f"garyrem: Error while reading /etc/garyrem/{slot}.txt: {e}")
+        exit(3)
+    exit(0)
+# lists all slots and their values
+elif read_all:
+    try:
+        for i in range(0, 10):
+            with open(f"/etc/garyrem/{i}.txt", "r") as file:
+                line = file.readline() or "<EMPTY>"
+            file.close()
+            print(str(i) + ": " + line)
+    except Exception as e:
+        print(f"garyrem: Error while reading a slot file: {e}")
+        exit(3)
+    exit(0)
+# sets or nukes a slot
+else:
+    try:
+        with open(f"/etc/garyrem/{slot}.txt", "w") as file:
+            file.write(text)
+        file.close()
+        if text:
+            print(f"Gary has crammed that into its brain at slot {slot}.")
+        else:
+            print(f"Gary has nuked that from its brain at slot {slot}.")
+    except Exception as e:
+        print(f"garyrem: Error while writing /etc/garyrem/{slot}.txt: {e}")
+        exit(4)
+    exit(0)
+# fallback exit
+exit(0)

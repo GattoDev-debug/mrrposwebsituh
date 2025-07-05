@@ -1,0 +1,64 @@
+#!/usr/bin/python3
+# `garysay` program by ANW for MrrpOS
+
+import sys
+
+VERSION_STR = "garysay v3 by ANW, for MrrpOS."
+show_help = False
+show_version = False
+show_about = False
+exception = False
+
+try:
+    text = str(sys.argv[1])
+    if text == "--help":
+        show_help = True
+    if text == "--version":
+        show_version = True
+    if text == "--about":
+        show_about = True
+except:
+    print("-----------------------------------------")
+    print("Usage: garysay <arg1>                    ")
+    print("  where '<arg1>' can be any of:          ")
+    print("    text      - the text for gary to say.")
+    print("    --help    - shows the help page.     ")
+    print("    --version - prints the version.      ")
+    print("    --about   - shows the about page.    ")
+    print("-----------------------------------------")
+    exit(1)
+
+if show_help:
+    print(VERSION_STR)
+    print("-----------------------------------------")
+    print("Usage: garysay <arg1>                    ")
+    print("  where '<arg1>' can be any of:          ")
+    print("    text      - the text for gary to say.")
+    print("    --help    - shows the help page.     ")
+    print("    --version - prints the version.      ")
+    print("    --about   - shows the about page.    ")
+    print("-----------------------------------------")
+    exit(0)
+elif show_version:
+    print(VERSION_STR)
+    exit(0)
+elif show_about:
+    print(VERSION_STR)
+    print("A `cowsay` replica for MrrpOS with Gary the cat.")
+    exit(0)
+else:
+    length = len(text)
+    dashes = "-" * length
+
+    print(" /-" + dashes + "-\\       ")
+    print(" | " + text + " |          ")
+    print(" \\  " + dashes + "/       ")
+    print("  \\/                      ")
+    print("                           ")
+    print("   |\\---/|                ")
+    print("   | ,_, |                 ")
+    print("    \\_`_/-..----.         ")
+    print(" ___/ `   ' ,""+   \\      ")
+    print("(__...'   __\\    |`.___.';")
+    print("  (_,...'(_,.`__)/'.....+  ")
+    exit(0)

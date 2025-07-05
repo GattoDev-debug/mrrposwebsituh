@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+# `gary` program by ANW for MrrpOS, v2
+
+import random
+
+GARY = "Gary, "
+PHRASES = [
+        "the most majestic feline.",
+        "the God of all cats.",
+        "the neko-est neko.",
+        "the mrrper of MrrpOS.",
+        "the cutest cat in existance.",
+        "the most beloved meower.",
+        "the optimus prime cat.",
+        "the most loved tusks.",
+        "the cutie cat.",
+        "the final boss.",
+        "the cat of the cats.",
+        "the adventurous neko.",
+        "the :3.",
+        "the best mrrper."
+]
+
+print(GARY + random.choice(PHRASES))
+exit(0)
+
